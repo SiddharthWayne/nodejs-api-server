@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat Facts API</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f4f4f9;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .fact {
+      font-size: 1.5rem;
+      color: #333;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #6200ea;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Random Cat Fact</h1>
+    <p id="cat-fact" class="fact">Click the button to fetch a cat fact.</p>
+    <button onclick="fetchCatFact()">Get Cat Fact</button>
+  </div>
+
+  <script>
+    async function fetchCatFact() {
+      const response = await fetch('/api/cat-facts');
+      const data = await response.json();
+      document.getElementById('cat-fact').textContent = data.fact;
+    }
+  </script>
+</body>
+</html>

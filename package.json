@@ -1,0 +1,14 @@
+{
+    "name": "cat-facts-api",
+    "version": "1.0.0",
+    "description": "A Node.js app that serves static JSON data from Cat Facts API",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "axios": "^1.7.7",
+        "express": "^4.21.1"
+    },
+    "type": "commonjs"
+}
